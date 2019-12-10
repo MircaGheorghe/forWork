@@ -19,7 +19,7 @@ driver.implicitly_wait(3)
 element = driver.find_element_by_name('login')
 element.send_keys(user_name, Keys.ARROW_DOWN)
 
-#find password input and typing password
+#find password input and typing it
 element = driver.find_element_by_name('password')
 element.send_keys(password)
 
@@ -32,9 +32,8 @@ sleep(2)
 driver.get("https://makler.md/md/an/web/add")
 
 #find select list and click to everyone
-print(test.list_cat[0])
-print(test.list_cat[1])
-print(test.born)
+for i in range(len(test.list_cat)):
+    element = driver.find_element_by_xpath("//select[@name='category']/option[text()='"+ test.list_cat[i] +"']").click()
 
 #find and enter the name of post
 element = driver.find_element_by_id("editorName")
@@ -100,4 +99,4 @@ for label in labels:
 element = driver.find_element_by_id('phone-37368035704').click()
 
 #plaseaza postarea
-element = driver.find_element_by_class_name('saveBtn').click()
+# element = driver.find_element_by_class_name('saveBtn').click()

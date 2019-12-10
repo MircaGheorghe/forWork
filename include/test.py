@@ -56,14 +56,12 @@ def parse_makler(base_url, headers):
                 print(title + ' - ' + value)
             print('------')
 
-        tower = soup.find("ul", attrs={'class', 'item-city'}).text.strip()
-        print(tower)
         phone = soup.find("ul", attrs={'class', 'hlist clrfix'}).text.strip()
         print(phone)
-        born = soup.find('div', attrs={'class', 'item_title_info'}).find_all('span')[0].text
-        print(born)
-        return post_title, post_price, list_cat, content, currency, born, img_count, specifications, phone, born
+        city = soup.find('div', attrs={'class', 'item_title_info'}).find_all('span')[0].text
+        print(city)
+        return post_title, post_price, list_cat, content, currency, city, img_count, specifications, phone
     else:
         print("Error")
 
-post_title, post_price, list_cat, content, currency, born, img_count, specifications, phone, born  = parse_makler(base_url, headers)
+post_title, post_price, list_cat, content, currency, city, img_count, specifications, phone  = parse_makler(base_url, headers)

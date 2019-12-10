@@ -42,4 +42,8 @@ cd work
 python selenium_test.pi
 clear
 cd ../../
+cd ../..
 python selenium_test.py
+git commit -m "second commit"
+git .
+git add .
