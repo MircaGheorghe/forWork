@@ -60,8 +60,8 @@ def parse_makler(base_url, headers):
         print(phone)
         city = soup.find('div', attrs={'class', 'item_title_info'}).find_all('span')[0].text
         print(city)
-        return post_title, post_price, list_cat, content, currency, city, img_count, specifications, phone
+        return post_title, post_price, list_cat, content, currency, city, img_count, specifications, phone, city
     else:
         print("Error")
 
-post_title, post_price, list_cat, content, currency, city, img_count, specifications, phone  = parse_makler(base_url, headers)
+post_title, post_price, list_cat, content, currency, city, img_count, specifications, phone, city  = parse_makler(base_url, headers)

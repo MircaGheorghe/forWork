@@ -35,9 +35,17 @@ driver.get("https://makler.md/md/an/web/add")
 for i in range(len(test.list_cat)):
     element = driver.find_element_by_xpath("//select[@name='category']/option[text()='"+ test.list_cat[i] +"']").click()
 
+#selecteza localitateaa si sectorul
+sectorul = test.specifications[list(test.specifications.keys())[-1]]
+city = test.city
+
+
 #find and enter the name of post
 element = driver.find_element_by_id("editorName")
 element.send_keys(test.post_title)
+element = driver.find_element_by_xpath("//select[@id='region']/option[text()='Moldova']").click()
+element = driver.find_element_by_xpath("//select[@id='city']/option[text()='"+ city +"']").click()
+element = driver.find_element_by_xpath("//select[@id='district']/option[text()='"+ sectorul +"']").click()
 
 #find and enter the describtion of the current post
 element = driver.find_element_by_id("editorText")
@@ -99,4 +107,4 @@ for label in labels:
 element = driver.find_element_by_id('phone-37368035704').click()
 
 #plaseaza postarea
-# element = driver.find_element_by_class_name('saveBtn').click()
+element = driver.find_element_by_class_name('saveBtn').click()

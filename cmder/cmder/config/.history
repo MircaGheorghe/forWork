@@ -47,3 +47,6 @@ python selenium_test.py
 git commit -m "second commit"
 git .
 git add .
+git commit -m "second comit"
+git remote add origin https://github.com/MircaGheorghe/forWork.git
+git push origin master
